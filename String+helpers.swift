@@ -2,6 +2,11 @@ import UIKit
 
 extension String {
 
+    /* Functions that exist in Swift, but have unfamiliar names */
+    func trim()->String {
+        return self.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+    }
+    
     func split(searchable:String)->Array<String>? {
         return self.componentsSeparatedByString(searchable)
     }
