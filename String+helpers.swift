@@ -22,11 +22,17 @@ extension String {
     }
     
     mutating func replace(searchable:String, with:String)->String? {
-        let start = self.rangeOfString(searchable)?.startIndex
-        let end = self.rangeOfString(searchable)?.endIndex
-        let rangeResult = start!..<end!
-        self.replaceRange(rangeResult, with: with)
-        return self
+        let arr = self.split(searchable)
+        var result:String = ""
+        for (index, elem) in (arr?.enumerate())! {
+            if index + 1 < arr!.count {
+                result = result + elem + with
+            } else {
+                result = result + elem
+            }
+            
+        }
+        return result
     }
     
 }
