@@ -46,31 +46,29 @@ extension String {
                 let limit = pad - length
                 while i < limit {
                     result = result + optionalPad
-                    i += result.characters.count
+                    i = result.characters.count
                 }
                 
-                if self.characters.count + result.characters.count <= pad {
+                if length + result.characters.count <= pad {
                     // add letter by letter
-                    i = self.characters.count + result.characters.count
+                    i = length + result.characters.count
                     
                     for letter in optionalPad.characters.enumerate() {
                         while i < pad {
                             result += String(letter.element)
-                            i += result.characters.count
+                            i += 1
                         }
                     }
                 }
                 
             } else {
-                for _ in 1..<pad {
+                let limit = pad - length + 1
+                for _ in 1..<limit {
                     result = result + " "
                 }
             }
-        
-            
             self = result + self
         }
-        
         return self
     }
     
@@ -79,9 +77,3 @@ extension String {
     }
     
 }
-
-
-
-
-
-
