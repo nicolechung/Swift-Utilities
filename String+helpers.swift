@@ -44,21 +44,23 @@ extension String {
             if let optionalPad = with {
                 var i = 0
                 let limit = pad - length
-                while i < limit {
+                print(i)
+                print(limit)
+                while i + optionalPad.characters.count - 1 < limit {
                     result = result + optionalPad
                     i = result.characters.count
                 }
-                
-                if length + result.characters.count <= pad {
+                if length + result.characters.count < pad {
                     // add letter by letter
                     i = length + result.characters.count
                     
                     for letter in optionalPad.characters.enumerate() {
-                        while i < pad {
+                        if i < pad {
                             result += String(letter.element)
-                            i += 1
                         }
+                        i += 1
                     }
+                    print(i)
                 }
                 
             } else {

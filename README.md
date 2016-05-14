@@ -29,3 +29,37 @@ let dateInFuture = currentDate.addDays(10)
 
 currentDate.isSameDateAs(dateInFuture)
 ```
+
+## String
+
+Include `String+helpers.swift` in your project.
+
+### split
+
+```Swift
+let example = "Find the day of the week"
+example.split(" ") // ["Find", "the", "day", "of", "week"]
+````
+
+### startsWith
+
+```Swift
+let example = "Find the day of the week"
+example.startsWith("Find") // true
+```
+
+### endsWith
+
+```Swift
+let example = "Find the day of the week"
+example.startsWith("week") // true
+```
+
+### replace
+
+```Swift
+let example = "Find the day of the week"
+example.replace("day", with: "Monday") // "Find the Monday of the week"
+```
+
+### padStart / leftPad

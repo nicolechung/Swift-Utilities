@@ -56,15 +56,3 @@ extension NSDate {
     }
     
 }
-
-// Usage
-
-let currentDate = NSDate()
-
-currentDate.day
-currentDate.weekday
-currentDate.weekdayName
-currentDate.month
-currentDate.monthName
-let dateInFuture = currentDate.addDays(10)
-currentDate.isSameDateAs(dateInFuture)
