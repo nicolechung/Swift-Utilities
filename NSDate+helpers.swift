@@ -50,14 +50,14 @@ extension NSDate {
     
     }
     
-    func addDays(numberOfDays:Double)->Double {
+    func addDays(numberOfDays:Double)->NSDate {
         let daysInTimeInterval = numberOfDays * 24 * 60 * 60
-        return daysInTimeInterval
+        return NSDate(timeInterval: daysInTimeInterval, sinceDate: self)
     }
     
 }
 
-
+// Usage
 
 let currentDate = NSDate()
 
@@ -67,6 +67,4 @@ currentDate.weekdayName
 currentDate.month
 currentDate.monthName
 let dateInFuture = currentDate.addDays(10)
-let futureDate = NSDate(timeInterval: dateInFuture, sinceDate: currentDate)
-
-currentDate.isSameDateAs(futureDate)
+currentDate.isSameDateAs(dateInFuture)
