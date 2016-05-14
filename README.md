@@ -34,6 +34,13 @@ currentDate.isSameDateAs(dateInFuture)
 
 Include `String+helpers.swift` in your project.
 
+### trim
+Removes whitespace from the beginning and end of a string
+```Swift
+let example = "   Find the day of the week  "
+let result = example.trim() // "Find the day of the week"
+````
+
 ### split
 
 ```Swift
