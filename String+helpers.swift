@@ -35,19 +35,51 @@ extension String {
         return result
     }
     
+    mutating func padStart(pad:Int, with:String?)->String {
+        var result = ""
+        let length = self.characters.count
+        
+        if pad < length { return self }
+        else {
+            if let optionalPad = with {
+                var i = 0
+                let limit = pad - length
+                while i < limit {
+                    result = result + optionalPad
+                    i += result.characters.count
+                }
+                
+                if self.characters.count + result.characters.count <= pad {
+                    // add letter by letter
+                    i = self.characters.count + result.characters.count
+                    
+                    for letter in optionalPad.characters.enumerate() {
+                        while i < pad {
+                            result += String(letter.element)
+                            i += result.characters.count
+                        }
+                    }
+                }
+                
+            } else {
+                for _ in 1..<pad {
+                    result = result + " "
+                }
+            }
+        
+            
+            self = result + self
+        }
+        
+        return self
+    }
+    
+    mutating func leftPad(pad:Int, with:String?)-> String {
+        return self.padStart(pad, with: with)
+    }
+    
 }
 
-
-var example = "Find the day of week"
-
-
-example.containsString("day")
-example.rangeOfString("day")?.startIndex
-example.rangeOfString("day")?.endIndex
-example.startAfter("the")
-example.hasPrefix("Find")
-example.replace("day", with: "Monday")
-example.split(" ")
 
 
 
