@@ -44,8 +44,6 @@ extension String {
             if let optionalPad = with {
                 var i = 0
                 let limit = pad - length
-                print(i)
-                print(limit)
                 while i + optionalPad.characters.count - 1 < limit {
                     result = result + optionalPad
                     i = result.characters.count
@@ -60,7 +58,6 @@ extension String {
                         }
                         i += 1
                     }
-                    print(i)
                 }
                 
             } else {
