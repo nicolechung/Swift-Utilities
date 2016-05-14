@@ -63,3 +63,10 @@ example.replace("day", with: "Monday") // "Find the Monday of the week"
 ```
 
 ### padStart / leftPad
+
+Pads the start (left side) of a string with an optional "with" parameter.
+
+```Swift
+let example = "Find the day of the week"
+example.padStart(28, with: "abcde" ) // "abcdeabcFind the day of week"
+```
